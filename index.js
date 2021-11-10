@@ -61,8 +61,10 @@ async function run() {
             const options = { upsert: true };
             const updateDoc = {
                 $set: {
-                    name: updatedEvent.name,
-                    email: updatedEvent.email
+                    title: updatedEvent.title,
+                    img: updatedEvent.img,
+					location: updatedEvent.location,
+					description: updatedEvent.description
                 },
             };
             const result = await eventCollection.updateOne(filter, updateDoc, options);
